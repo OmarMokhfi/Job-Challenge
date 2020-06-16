@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class enemiesGenerator : MonoBehaviour
 {
-    public static int ENEMIES_NUMBER = 2;
+    public static int ENEMIES_NUMBER = 7;
     public GameObject enemy;
     void Start()
     {

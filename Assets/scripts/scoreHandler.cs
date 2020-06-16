@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class scoreHandler : MonoBehaviour
 {
@@ -38,5 +39,10 @@ public class scoreHandler : MonoBehaviour
     void endGame(){
         Destroy(player);
         gameOverPanel.SetActive(true);
+        GameObject.FindGameObjectWithTag("highscore").GetComponent<Text>().text = PlayerPrefs.GetInt("HighScore").ToString();
+    }
+
+    public void goMenu(){
+        SceneManager.LoadScene(0);
     }
 }
