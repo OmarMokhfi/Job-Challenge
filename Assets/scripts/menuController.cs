@@ -7,10 +7,15 @@ using UnityEngine.SceneManagement;
 public class menuController : MonoBehaviour
 {
     private Text score;
-    void Start()
-    {
+    void Start(){
         score = GameObject.FindGameObjectWithTag("score").GetComponent<Text>();
         score.text = PlayerPrefs.GetInt("HighScore").ToString();
+    }
+
+    void Update(){
+        if(Input.GetMouseButtonDown(0)){
+            nextLevel();
+        }
     }
 
     public void nextLevel(){
